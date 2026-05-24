@@ -18,7 +18,6 @@ class Database {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->conn->exec("set names utf8");
         } catch(PDOException $exception) {
-            // Kode error 1049 berarti database 'showcase_ekokraf' belum ada di server
             if ($exception->getCode() == 1049) {
                 return "DB_NOT_FOUND";
             }
