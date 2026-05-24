@@ -12,7 +12,6 @@ $db_conn = $database->getConnection();
 $customer = new CustomerUser($db_conn);
 
 if (isset($_POST['pesan'])) {
-    // Perbaikan: menambahkan tanda '$' pada variabel customer
     $customer->buatPesanan($_SESSION['user_id'], $_POST['produk_id'], $_POST['ukuran']);
     echo "<script>alert('Pesanan berhasil dibuat!'); window.location='user.php';</script>";
 }
