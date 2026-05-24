@@ -31,7 +31,6 @@ class DatabaseSetup {
         $serverConn->exec("CREATE DATABASE IF NOT EXISTS showcase_ekokraf");
         echo "[+] Object Database 'showcase_ekokraf' terwujud.<br>";
         
-        // Jembatani properti internal dengan koneksi DB utama yang baru saja dibuat
         $this->pdo = $this->dbGateway->getConnection();
     }
 
