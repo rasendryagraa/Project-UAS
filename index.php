@@ -3,14 +3,13 @@ require_once 'Class.php';
 session_start();
 
 $database = new Database();
-$db_conn = $database->getConnection(); // Ambil koneksi PDO aktifnya
+$db_conn = $database->getConnection(); 
 
-// Cek jika DB belum dibuat oleh database.php
 if ($db_conn === "DB_NOT_FOUND") {
     die("Aplikasi belum siap. Silakan jalankan file <a href='database.php'>database.php</a> terlebih dahulu untuk memasang database.");
 }
 
-$user_system = new User($db_conn); // Oper koneksi PDO ke Constructor User
+$user_system = new User($db_conn); 
 $error = '';
 
 if (isset($_POST['login'])) {
